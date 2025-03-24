@@ -6,8 +6,9 @@ locals {
     var.vm_config_001,
     {
       admin_ssh_key = {
-        username   = data.azurerm_key_vault_secret.linuxuseradmin.value
-        password   = data.azurerm_key_vault_secret.linuxpassadmin.value
+        public_key = file("./../../../certificates/linuxuser.pub")
+        username   = "linuxuser"
+        password   = "Passw0rdXXYZ2025"
       }
     },
     {

@@ -4,6 +4,6 @@ terraform {
     resource_group_name  = var.resource_group_name
     storage_account_name = var.storageaccount_name
     container_name       = "tfstate"
-    key                  = "xyz-vm.tfstate"
+    key                  = "xyz-netw.tfstate"
   }
 }

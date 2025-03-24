@@ -4,39 +4,19 @@ resource "azurerm_resource_group" "am" {
   tags     = var.tags
 }
 
-data "azurerm_key_vault" "devops" {
-  provider            = azurerm.hub
-  name                = var.keyvault_001_name
-  resource_group_name = var.resource_group_devops_name
-}
-
-data "azurerm_key_vault_secret" "linuxuseradmindb" {
-  provider     = azurerm.hub
-  name         = var.secret_linuxuseradmindb
-  key_vault_id = data.azurerm_key_vault.devops.id
-}
-
-data "azurerm_key_vault_secret" "linuxpassadmindb" {
-  provider     = azurerm.hub
-  name         = var.secret_linuxpassadmindb
-  key_vault_id = data.azurerm_key_vault.devops.id
-}
-
 data "azurerm_virtual_network" "netw" {
   name                = var.vnet_001_name
   resource_group_name = var.resource_group_netw_name
 }
 
 data "azurerm_subnet" "snet" {
-  for_each             = { for idx, subnet in local.subnet_data_list : idx => subnet }
-  name                 = each.value
+  name                 = data.subnet_id
   resource_group_name  = var.resource_group_netw_name
   virtual_network_name = data.azurerm_virtual_network.netw.name
 }
 
 module "postgresql" {
-  for_each                         = { for postresql in local.postresql_list : postresql.name => postresql }
-  source                           = "../../../modules/az_database_postgresql"
+  source                           = "../../../../modules/az_database_postgresql"
   name                             = each.value.name
   location                         = var.location
   resource_group_name              = azurerm_resource_group.am.name
@@ -56,7 +36,7 @@ module "postgresql" {
 
 module "private_endpoints" {
   for_each                           = { for private_endpoint in local.private_endpoint_list : private_endpoint.name => private_endpoint }
-  source                             = "../../../modules/az_network_private_endpoint"
+  source                             = "../../../../modules/az_network_private_endpoint"
   name                               = each.value.name
   location                           = var.location
   resource_group_name                = azurerm_resource_group.am.name

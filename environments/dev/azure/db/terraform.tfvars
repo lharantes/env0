@@ -1,11 +1,9 @@
-resource_group_name        = "resourcegroup_name"
-resource_group_netw_name   = "rgnetw_name"
-resource_group_devops_name = "rgdevops_name"
+resource_group_name        = var.resource_group_name
 location                   = "North Europe"
 vnet_001_name              = "besd-it-dev-vnet"
 subnet_001_name            = "besd-it-dev-snet-db"
 postgresql_001 = {
-  "name"                             = "dbamfmdev01"
+  "name"                             = "xyzdevdb001"
   "administrator_login"              = null
   "administrator_login_password"     = null
   "sku_name"                         = "GP_Gen5_4"
@@ -25,10 +23,4 @@ private_endpoint_001 = {
   psc_private_connection_resource_id = null
   psc_subresource_names              = ["postgresqlServer"]
   psc_is_manual_connection           = false
-}
-keyvault_001_name       = "besd-it-hub-kv-01"
-secret_linuxuseradmindb = "linuxuseradmindb"
-secret_linuxpassadmindb = "linuxpassadmindb"
-tags = {
-  "ManagedBy" = "Terraform"
 }

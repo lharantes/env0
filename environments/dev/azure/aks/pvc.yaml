@@ -25,7 +25,7 @@ metadata:
   name: volume-01
 spec:
   capacity:
-    storage: 5125Gi
+    storage: 64Gi
   volumeMode: Filesystem
   accessModes: 
   - ReadWriteMany
@@ -34,71 +34,6 @@ spec:
     vsphereVolume:
       volumePath: "/volume_01"
       fsType: ext4
-
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: volume-02
-spec:
-  storageClassName: storage
-  capacity:
-    storage: 5125Gi
-  accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: "/volume_02"
-
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: volume-03
-spec:
-  storageClassName: storage
-  capacity:
-    storage: 5125Gi
-  accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: "/volume_03"
-
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: volume-04
-spec:
-  storageClassName: storage
-  capacity:
-    storage: 5125Gi
-  accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: "/volume_04"
-
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: volume-05
-spec:
-  storageClassName: storage
-  capacity:
-    storage: 5125Gi
-  accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: "/volume_05"
-
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: volume-06
-spec:
-  storageClassName: storage
-  capacity:
-    storage: 5125Gi
-  accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: "/volume_06"
 
 #####################
 
@@ -113,81 +48,6 @@ spec:
   volumeName: "volume-01"
   resources:
     requests:
-      storage: 5125Gi
+      storage: 64Gi
     limits:
-      storage: 5125Gi
-
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: storageclaim02
-spec:
-  accessModes:
-    - ReadWriteMany
-  storageClassName: "storage"
-  volumeName: "volume-02"
-  resources:
-    requests:
-      storage: 5125Gi
-    limits:
-      storage: 5125Gi
-
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: storageclaim03
-spec:
-  accessModes:
-    - ReadWriteMany
-  storageClassName: "storage"
-  volumeName: "volume-03"
-  resources:
-    requests:
-      storage: 5125Gi
-    limits:
-      storage: 5125Gi
-
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: storageclaim04
-spec:
-  accessModes:
-    - ReadWriteMany
-  storageClassName: "storage"
-  volumeName: "volume-04"
-  resources:
-    requests:
-      storage: 5125Gi
-    limits:
-      storage: 5125Gi
-
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: storageclaim05
-spec:
-  accessModes:
-    - ReadWriteMany
-  storageClassName: "storage"
-  volumeName: "volume-05"
-  resources:
-    requests:
-      storage: 5125Gi
-    limits:
-      storage: 5125Gi
-
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: storageclaim06
-spec:
-  accessModes:
-    - ReadWriteMany
-  storageClassName: "storage"
-  volumeName: "volume-06"
-  resources:
-    requests:
-      storage: 5125Gi
-    limits:
-      storage: 5125Gi
+      storage: 64Gi
