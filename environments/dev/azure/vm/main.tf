@@ -42,7 +42,7 @@ data "azurerm_network_security_group" "nsg" {
 
 module "vm_linux" {
   for_each            = { for vm_linux in local.vm_linux_list : vm_linux.name => vm_linux }
-  source              = "../../../modules/az_vm_linux"
+  source              = "../../../../modules/az_vm_linux"
   vm_info             = each.value
   resource_group_name = azurerm_resource_group.migs.name
   location            = var.location
