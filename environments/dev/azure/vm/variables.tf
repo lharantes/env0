@@ -10,10 +10,6 @@ variable "resource_group_netw_name" {
   description = "The name of the Netw resource group"
   type        = string
 }
-variable "resource_group_devops_name" {
-  description = "The name of the DevOps resource group"
-  type        = string
-}
 variable "location" {
   description = "The Azure Region where the Resource Group should exist."
   type        = string
@@ -32,10 +28,6 @@ variable "vnet_001_name" {
 }
 variable "subnet_001_name" {
   description = "The name of the subnet"
-  type        = string
-}
-variable "keyvault_001_name" {
-  description = "The name of the Key Vault"
   type        = string
 }
 variable "secret_linuxuseradmin" {
