@@ -6,7 +6,7 @@ locals {
     var.vm_config_001,
     {
       admin_ssh_key = {
-        public_key = file("./../../../certificates/linuxuser.pub")
+        public_key = file("./../../../../certificates/linuxuser.pub")
         username   = "linuxuser"
         password   = "Passw0rdXXYZ2025"
       }
