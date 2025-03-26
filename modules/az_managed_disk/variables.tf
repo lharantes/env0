@@ -27,8 +27,7 @@ variable "disk_size_gb" {
 }
 variable "zone" {
   description = "A collection containing the availability zone to allocate the Managed Disk in"
-  type        = list(string)
-  default     = []
+  type        = string
 }
 variable "disk_iops_read_write" {
   description = "The number of IOPS allowed for this disk; only settable for UltraSSD disks."
