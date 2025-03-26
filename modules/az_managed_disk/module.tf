@@ -5,7 +5,7 @@ resource "azurerm_managed_disk" "amd" {
   create_option        = var.create_option
   storage_account_type = var.storage_account_type
   disk_size_gb         = var.disk_size_gb
-  zones                = var.zones
+  zone                = var.zone
   disk_iops_read_write = var.disk_iops_read_write
   tags                 = var.tags
 
