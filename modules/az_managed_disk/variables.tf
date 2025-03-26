@@ -25,7 +25,7 @@ variable "disk_size_gb" {
   type        = number
   default     = 128
 }
-variable "zones" {
+variable "zone" {
   description = "A collection containing the availability zone to allocate the Managed Disk in"
   type        = list(string)
   default     = []
