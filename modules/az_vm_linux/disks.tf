@@ -9,7 +9,7 @@ module "disk_obj" {
   disk_size_gb         = each.value.disk_size_gb
   lun                  = each.value.lun
   storage_account_type = each.value.storage_account_type
-  zones                = each.value.zones
+  zone                 = each.value.zone
   location             = var.location
   resource_group_name  = var.resource_group_name
   tags                 = var.tags
