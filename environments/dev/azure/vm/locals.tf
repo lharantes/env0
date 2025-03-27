@@ -1,5 +1,5 @@
 locals {
-  subnet_data_list = [var.subnet_001_name]
+  subnet_data_list = var.subnet_001_name
   vm_config_001 = merge(
     var.vm_config_001,
     {

@@ -16,9 +16,8 @@ data "azurerm_subnet" "snet" {
 }
 
 module "vm_linux" {
-  for_each            = { for vm_linux in local.vm_linux_list : vm_linux.name => vm_linux }
   source              = "../../../../modules/az_vm_linux"
-  vm_info             = each.value
+  vm_info             = var.vm_config_00
   resource_group_name = azurerm_resource_group.xyz.name
   location            = var.location
   tags                = var.tags
