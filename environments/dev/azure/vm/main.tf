@@ -17,7 +17,7 @@ data "azurerm_subnet" "snet" {
 
 module "vm_linux" {
   source              = "../../../../modules/az_vm_linux"
-  vm_info             = local.vm_config_00
+  vm_info             = local.vm_config_001
   resource_group_name = azurerm_resource_group.xyz.name
   location            = var.location
   tags                = var.tags
