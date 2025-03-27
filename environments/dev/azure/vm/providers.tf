@@ -10,6 +10,6 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_ID = var.subscription_id
+  subscription_id = var.subscription_id
   use_oidc = true
 }
