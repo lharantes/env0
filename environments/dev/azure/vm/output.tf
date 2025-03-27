@@ -7,8 +7,6 @@ output "vnet_guid" {
 }
 
 output "snet_id" {
-  value = {
-    data.azurerm_subnet.snet.id
-  }
+  value = data.azurerm_subnet.snet.id
   description = "The subnet ID"
 }
