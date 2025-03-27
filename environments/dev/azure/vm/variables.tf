@@ -18,10 +18,6 @@ variable "tags" {
   description = "A mapping of tags"
   type        = map(string)
 }
-variable "nsg_001_name" {
-  description = "The name of the network security group"
-  type        = string
-}
 variable "vnet_001_name" {
   description = "The name of the virtual network"
   type        = string
