@@ -1,7 +1,9 @@
-resource_group_name        = var.resource_group_name
+resource_group_name        = "rg-ne-xyz-vm"
+resource_group_netw_name   = "rg-ne-networking"
+storageaccount_name        = "stnexyzenv0test1"
 location                   = "North Europe"
-vnet_001_name              = "besd-it-dev-vnet"
-subnet_001_name            = "besd-it-dev-snet-db"
+vnet_001_name              = "vnet-ne-sandbox-e0"
+subnet_001_name            = "snet-ne-dev"
 postgresql_001 = {
   "name"                             = "xyzdevdb001"
   "administrator_login"              = null
