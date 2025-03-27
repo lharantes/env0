@@ -1,4 +1,4 @@
-variable "subscription-id" {
+variable "subscription_id" {
   description = "The name of the resource group"
   type        = string
 }
