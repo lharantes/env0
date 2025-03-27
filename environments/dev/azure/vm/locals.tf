@@ -14,11 +14,10 @@ locals {
         {
           nic_name             = "${var.vm_config_001.name}-nic"
           ip_config_name       = "internal"
-          private_ip_address   = data.azurerm_subnet.snet.address_prefixes
           subnet_id            = data.azurerm_subnet.snet.id
           dns_servers          = []
           enable_ip_forwarding = false
-          ip_allocation        = "Static"
+          ip_allocation        = "Dynamic"
         }
       ]
     }
