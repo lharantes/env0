@@ -1,7 +1,5 @@
 locals {
   subnet_data_list = [var.subnet_001_name]
-  nsg_data_list    = [var.nsg_001_name]
-
   vm_config_001 = merge(
     var.vm_config_001,
     {
