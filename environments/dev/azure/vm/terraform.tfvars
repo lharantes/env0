@@ -1,9 +1,9 @@
-resource_group_name        = "rg-xyz-dev-vm"
-resource_group_netw_name   = "rg-xyz-dev-netw"
+resource_group_name        = "rg-ne-xyz-vm"
+resource_group_netw_name   = "rg-ne-networking"
+storageaccount_name        = "stnexyzenv0test1"
 location                   = "North Europe"
-vnet_001_name              = var.vnet_001_name
-subnet_001_name            = sub
-nsg_001_name               = data.nsg_001_name
+vnet_001_name              = "vnet-ne-sandbox-e0"
+subnet_001_name            = "snet-ne-dev"
 vm_config_001 = {
   name = "azlxyzdev001"
   size = "Standard_D2_v4"
@@ -64,4 +64,6 @@ vm_config_001 = {
 }
 tags = {
   "ManagedBy" = "Terraform"
+  "Sandbox" = "True"
+  "StopStartVM" = "False"
 }
