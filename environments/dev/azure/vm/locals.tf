@@ -14,7 +14,7 @@ locals {
         {
           nic_name             = "${var.vm_config_001.name}-nic"
           ip_config_name       = "internal"
-          private_ip_address   = var.private_ip_address
+          private_ip_address   = value.private_ip_address
           subnet_id            = data.azurerm_subnet.snet.id
           dns_servers          = []
           enable_ip_forwarding = false
