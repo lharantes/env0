@@ -54,7 +54,7 @@ resource "azurerm_virtual_machine" "vm" {
   os_profile {
     computer_name  = "azlxyzdev001"
     admin_username = "linuxuser"
-    admin_password = "Pass"
+    admin_password = "Passw0rd!2025#"
   }
 
   os_profile_linux_config {
