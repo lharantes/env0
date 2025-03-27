@@ -8,8 +8,7 @@ output "vnet_guid" {
 
 output "snet_id" {
   value = {
-    for key, value in data.azurerm_subnet.snet :
-    key => value.id
+    data.azurerm_subnet.snet.id
   }
   description = "The subnet ID"
 }
