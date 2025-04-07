@@ -18,25 +18,6 @@ variable "tags" {
   description = "A mapping of tags"
   type        = map(string)
 }
-variable "storage_account_list" {
-  description = "Storage Account List"
-  type = list(object(
-    {
-      storage_name             = string
-      storage_tier             = string
-      storage_replication_type = string
-      allow_blob_public_access = bool
-      min_tls                  = string
-      account_kind             = string
-      container_list = list(object(
-        {
-          name                  = string
-          container_access_type = string
-        }
-      ))
-    }
-  ))
-}
 variable "key_vault_list" {
   description = "Key Vault List"
   type = list(object(
