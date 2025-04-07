@@ -45,4 +45,6 @@ aks_001_role_based_access_control = [
 ]
 tags = {
   "ManagedBy" = "Terraform"
+  "Sandbox" = "True"
+  "StopStartVM" = "False"
 }

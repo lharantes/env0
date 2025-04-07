@@ -28,4 +28,6 @@ key_vault_list = [
 ]
 tags = {
   "ManagedBy" = "Terraform"
+  "Sandbox" = "True"
+  "StopStartVM" = "False"
 }

@@ -26,3 +26,8 @@ private_endpoint_001 = {
   psc_subresource_names              = ["postgresqlServer"]
   psc_is_manual_connection           = false
 }
+tags = {
+  "ManagedBy" = "Terraform"
+  "Sandbox" = "True"
+  "StopStartVM" = "False"
+}

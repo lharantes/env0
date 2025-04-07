@@ -18,4 +18,6 @@ storage_account_list = [
 ]
 tags = {
   "ManagedBy" = "Terraform"
+  "Sandbox" = "True"
+  "StopStartVM" = "False"
 }

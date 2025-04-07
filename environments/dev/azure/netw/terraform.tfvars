@@ -6,6 +6,8 @@ vnet_001_name              = "vnet-ne-sandbox-e0"
 subnet_001_name            = "snet-ne-dev"
 tags = {
   "ManagedBy" = "Terraform"
+  "Sandbox" = "True"
+  "StopStartVM" = "False"
 }
 vnet_001_name          = var.vnet_name
 vnet_001_address_space = ["172.16.0.0/22"]
