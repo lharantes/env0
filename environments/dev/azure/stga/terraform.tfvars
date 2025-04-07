@@ -12,11 +12,11 @@ storage_account_list = [
       {
         name                  = "keyv"
         container_access_type = "container"
-      }
+      },
       {
         name                  = "netw"
         container_access_type = "container"
-      }
+      },
       {
         name                  = "tfstate"
         container_access_type = "container"
