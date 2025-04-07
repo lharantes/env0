@@ -1,3 +1,7 @@
+variable "tenant_id" {
+  description = "The name of the subscription id"
+  type        = string
+}
 variable "subscription_id" {
   description = "The name of the subscription id"
   type        = string
