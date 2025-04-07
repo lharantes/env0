@@ -2,8 +2,8 @@ module "storage_account" {
   for_each                 = { for storage_account in var.storage_account_list : storage_account.storage_name => storage_account }
   source                   = "../../../../modules/az_storage_account"
   storage_name             = each.value.storage_name
-  resource_group_name      = azurerm_resource_group.xyz.name
-  location                 = azurerm_resource_group.xyz.location
+  resource_group_name      = var.resource_group_name
+  location                 = var.location
   storage_tier             = each.value.storage_tier
   storage_replication_type = each.value.storage_replication_type
   allow_blob_public_access = each.value.allow_blob_public_access
