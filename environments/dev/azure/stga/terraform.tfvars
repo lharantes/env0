@@ -2,7 +2,7 @@ resource_group_name        = "rg-ne-xyz-vm"
 location                   = "North Europe"
 storage_account_list = [
   {
-    storage_name             = "stnexyzenv0test1"
+    storage_name             = "stganexyzenv0test1"
     storage_tier             = "Standard"
     storage_replication_type = "LRS"
     allow_blob_public_access = true
