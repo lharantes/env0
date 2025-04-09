@@ -4,10 +4,8 @@ resource "azurerm_storage_account" "storage" {
   location                  = var.location
   account_tier              = var.storage_tier
   account_replication_type  = var.storage_replication_type
-  allow_blob_public_access  = var.allow_blob_public_access
   min_tls_version           = var.min_tls
   account_kind              = var.account_kind
-  enable_https_traffic_only = var.enable_https_traffic_only
 
   dynamic "static_website" {
     for_each = var.static_website
