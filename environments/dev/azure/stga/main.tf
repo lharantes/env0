@@ -6,7 +6,6 @@ module "storage_account" {
   location                 = var.location
   storage_tier             = each.value.storage_tier
   storage_replication_type = each.value.storage_replication_type
-  allow_blob_public_access = each.value.allow_blob_public_access
   min_tls                  = each.value.min_tls
   account_kind             = each.value.account_kind
   container_list           = each.value.container_list
