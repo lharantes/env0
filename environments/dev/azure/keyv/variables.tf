@@ -1,5 +1,5 @@
 variable "tenant_id" {
-  description = "The name of the subscription id"
+  description = "The name of the Tenant id"
   type        = string
 }
 variable "subscription_id" {
