@@ -7,11 +7,18 @@ pending[format(rego.metadata.rule())] {
 	count(input.approvers) < 1
 }
 
-# METADATA
-# title: Allow if got approved
-# description: approved
-allow[format(rego.metadata.rule())] {
-	count(input.approvers) >= 1
+format(meta) := meta.description
+
+has_key(x, k) {
+  _ = x[k]
 }
 
-format(meta) := meta.description
+cost_approvers := "cfd5b805-6568-4a07-a5fc-7f0b594d848d"  # Cost Approvers
+
+allow[format(rego.metadata.rule())] {
+  any_approver_present
+}
+
+any_approver_present {
+  input.approvers[_].teams[_].id == cost_approvers
+}
