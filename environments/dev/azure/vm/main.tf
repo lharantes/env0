@@ -44,12 +44,12 @@ resource "azurerm_virtual_machine" "vm" {
     managed_disk_type = "Standard_LRS"
   }
 
-  source_image_reference {
-    publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts-gen2"
-    version   = "latest"
-  }
+  storage_image_reference {
+     publisher = "Canonical"
+     offer     = "UbuntuServer"
+     sku       = "20.04-LTS"
+     version   = "latest"
+   }
 
   os_profile {
     computer_name  = "azlxyzdev001"
