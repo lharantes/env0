@@ -1,6 +1,6 @@
-resource_group_name        = "rg-ne-xyz-vm"
+resource_group_name        = "rg-ne-xyz-env0-agent"
 resource_group_netw_name   = "rg-ne-networking"
-storageaccount_name        = "stnexyzenv0test1"
+storageaccount_name        = "stnexyzenv0test2"
 location                   = "North Europe"
 vnet_001_name              = "vnet-ne-sandbox-e0"
 subnet_001_name            = "snet-ne-dev"

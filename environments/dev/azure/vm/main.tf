@@ -18,6 +18,16 @@ resource "azurerm_subnet" "subnet" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
+resource "azurerm_public_ip" "publicip" {
+  name                = "pip-ne-xyz"
+  resource_group_name = azurerm_resource_group.xyz.name
+  location            = azurerm_resource_group.xyz.location
+  allocation_method   = "Static"
+  sku                 = "Standard"
+
+  tags = var.tags
+}
+
 resource "azurerm_network_interface" "nic" {
   name                = "azlxyzdev001-nic"
   location            = azurerm_resource_group.xyz.location
@@ -27,6 +37,7 @@ resource "azurerm_network_interface" "nic" {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.subnet.id
     private_ip_address_allocation = "Dynamic"
+    public_ip_id                  = azurerm_public_ip.publicip.id
   }
 }
 
